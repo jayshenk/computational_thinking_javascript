@@ -5,17 +5,11 @@ function rot13(string) {
   for (var i = 0; i < string.length; i++) {
     charCode = string.charCodeAt(i);
 
-    // Capital letters
-    if (charCode >= 65 && charCode < 78) {
+    if (charCode >= 65 && charCode < 78 ||
+        charCode >= 97 && charCode < 110) {
       charCode += 13;
-    } else if (charCode >= 78 && charCode <= 90) {
-      charCode -= 13;
-    }
-
-    // Lowercase letters
-    if (charCode >= 97 && charCode < 110) {
-      charCode += 13;
-    } else if (charCode >= 110 && charCode <= 122) {
+    } else if (charCode >= 78 && charCode <= 90 ||
+               charCode >= 110 && charCode <= 122) {
       charCode -= 13;
     }
 
